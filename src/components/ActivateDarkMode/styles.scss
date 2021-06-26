@@ -1,0 +1,29 @@
+.dark {
+    
+    button {
+        transition: all .2s ease-in ;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 80px;
+        outline: none;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 1px solid purple;
+
+        .circle {
+            border: 3px solid rgba(177, 11, 177, 0.589);
+            padding: 1rem;
+            border-radius: 999px;
+        }
+    }
+}
+.active {
+    button {
+        justify-content: flex-end;
+        background: rgb(58, 58, 58);
+        .circle {
+            background-color: purple;
+        }
+    }
+}

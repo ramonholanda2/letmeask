@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import NewRoom from "./pages/NewRoom";
 
-function App() {
+import { AuthContextProvider } from "./contexts/AuthContext";
+import { DarkModeProvider } from "./contexts/DarkModeContext";
+import Rooms from "./pages/Rooms";
+import AdminRoom from "./pages/AdminRoom";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthContextProvider>
+        <DarkModeProvider>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rooms/new" exact component={NewRoom} />
+            <Route path="/rooms/:id" component={Rooms} />
+            <Route path="/admin/rooms/:id" component={AdminRoom} />
+          </Switch>
+        </DarkModeProvider>
+      </AuthContextProvider>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,29 @@
+.menu {
+    position: fixed;
+    right: 0px;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    padding-top: 3rem;
+    border-radius: 8px 0px;
+    background: #383838;
+    border-left: 3px solid rgb(214, 1, 214);
+    gap: 3rem;
+    
+    &.darkMode {
+        border-left: 3px solid purple;
+        background: #330033;
+    }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3rem;
+    }
+    span {
+        cursor: pointer;
+    }
+}
